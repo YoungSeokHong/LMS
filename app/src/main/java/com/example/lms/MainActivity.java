@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         btn_signIn = findViewById(R.id.btn_signIn);
         tv_sinUp = findViewById(R.id.tv_sinUp);
+
         btn_signIn.setOnClickListener(signInListener);
         tv_sinUp.setOnClickListener(signUpListener);
     }
