@@ -4,41 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity"
-    android:scrollbars="vertical"
     android:scrollbarSize="10dp"
-    android:scrollbarThumbVertical="@android:color/darker_gray">
+    android:scrollbarThumbVertical="@android:color/darker_gray"
+    android:scrollbars="vertical"
+    tools:context=".SignUpActivity">
 
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="40dp"
         android:text="회원가입"
         android:textSize="27dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="151dp"
-        android:layout_height="99dp"
-        android:layout_marginBottom="24dp"
-        android:src="@drawable/mju_logo2"
-        app:layout_constraintBottom_toTopOf="@+id/et_name"
+        app:layout_constraintBottom_toTopOf="@+id/et_id"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/et_name"
+        android:id="@+id/et_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="아이디"
+        android:inputType="textPersonName"
         android:maxLength="20"
         app:layout_constraintBottom_toTopOf="@+id/et_password"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,8 +41,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="비밀번호"
+        android:inputType="textPersonName"
         android:maxLength="20"
         app:layout_constraintBottom_toTopOf="@+id/et_checkPassword"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,11 +56,11 @@
         android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="비밀번호 확인"
-        android:maxLength="20"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/et_studentNum"
+        android:maxLength="20"
+        app:layout_constraintBottom_toTopOf="@+id/et_name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintHorizontal_bias="0.353"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -78,8 +68,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:text="중복확인"
         android:backgroundTint="#152477"
+        android:text="중복확인"
         app:layout_constraintBottom_toTopOf="@+id/et_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
@@ -103,7 +93,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="132dp"
+        android:layout_marginBottom="56dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/btn_ok"
         app:layout_constraintEnd_toEndOf="parent"
@@ -151,5 +141,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toEndOf="@+id/btn_cancel" />
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="이름"
+        android:inputType="textPersonName"
+        android:maxLength="15"
+        app:layout_constraintBottom_toTopOf="@+id/et_studentNum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
