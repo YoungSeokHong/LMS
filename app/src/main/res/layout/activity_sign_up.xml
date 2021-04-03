@@ -1,121 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center|top"
-    android:orientation="vertical"
-    tools:context=".SignUpActivity">
+    tools:context=".SignUpActivity"
+    android:scrollbars="vertical"
+    android:scrollbarSize="10dp"
+    android:scrollbarThumbVertical="@android:color/darker_gray">
+
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="20dp"
         android:text="회원가입"
-        android:textColor="#707070"
-        android:textSize="30dp"
-        android:textStyle="bold" />
+        android:textSize="27dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="151dp"
+        android:layout_height="99dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/mju_logo2"
+        app:layout_constraintBottom_toTopOf="@+id/et_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:hint="이름"
-        android:maxLength="30" />
-
-    <LinearLayout
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:orientation="horizontal">
-
-        <EditText
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:hint="아이디"
-            android:maxLength="15" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:backgroundTint="#152477"
-            android:text="중복확인"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <EditText
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:hint="비밀번호(5~20자 영문숫자 조합)"
-        android:inputType="textPassword"
-        android:maxLength="20" />
-
-    <EditText
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:hint="비밀번호 확인"
-        android:inputType="textPassword"
-        android:maxLength="20" />
-
-    <LinearLayout
+        android:id="@+id/et_name"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="아이디"
+        android:maxLength="20"
+        app:layout_constraintBottom_toTopOf="@+id/et_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="비밀번호"
+        android:maxLength="20"
+        app:layout_constraintBottom_toTopOf="@+id/et_checkPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/et_checkPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="비밀번호 확인"
+        android:maxLength="20"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/et_studentNum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="중복확인"
+        android:backgroundTint="#152477"
+        app:layout_constraintBottom_toTopOf="@+id/et_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/et_name" />
+
+    <EditText
+        android:id="@+id/et_studentNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="학번"
+        android:inputType="number"
+        android:maxLength="8"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="132dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ok"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
         <Spinner
             android:id="@+id/spn_college"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1" />
 
         <Spinner
             android:id="@+id/spn_major"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <EditText
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:hint="학번"
-        android:inputType="number"
-        android:maxLength="8" />
-
-    <EditText
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:hint="전화번호"
-        android:inputType="phone"
-        android:maxLength="11" />
-
-    <LinearLayout
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#707070"
-            android:text="취소" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:backgroundTint="#152477"
-            android:text="가입"
-            android:textStyle="bold"/>
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="50dp"
+            android:layout_weight="1" />
 
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#7A7A7A"
+        android:text="취소"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#152477"
+        android:text="확인"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toEndOf="@+id/btn_cancel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
